@@ -1,12 +1,11 @@
-import Vue from 'vue'
-import App from '@/App'
-// import "@babel/polyfill";
-Vue.config.productionTip = false
+import Vue from 'vue';
+import ElementUI from 'element-ui';
+import 'element-ui/lib/theme-chalk/index.css';
+import App from './App.vue';
+
+Vue.use(ElementUI);
 
 new Vue({
-    beforeCreate() {
-        Vue.prototype.$bus = this
-    },
     el: '#root',
     render: h => h(App)
-})
+});

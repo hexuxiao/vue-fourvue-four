@@ -50,6 +50,11 @@ module.exports = {
             {
                 test: /\.vue$/,
                 loader: 'vue-loader'
+            },
+            //处理图标引入
+            {
+                test: /\.(eot|svg|ttf|woff|woff2)(\?\S*)?$/,
+                loader: 'file-loader'
             }
         ]
     },
@@ -65,8 +70,8 @@ module.exports = {
         //引入外来css
         new CopyWebpackPlugin([{
             from: path.resolve(__dirname, 'src/public'),
-            to:path.resolve(__dirname,'dist'),
-            ignore:['index.html']
+            to: path.resolve(__dirname, 'dist'),
+            ignore: ['index.html']
         }])
     ],
     //配置模式
