@@ -26,7 +26,17 @@ module.exports = {
                 use: {
                     loader: 'babel-loader',
                     options: {
-                        presets: ['@babel/preset-env']
+                        presets: ['@babel/preset-env'],
+                        //element-ui按需引入，减小项目体积
+                        plugins: [
+                            [
+                                "component",
+                                {
+                                    "libraryName": "element-ui",
+                                    "styleLibraryName": "theme-chalk"
+                                }
+                            ]
+                        ]
                     }
                 }
             },
