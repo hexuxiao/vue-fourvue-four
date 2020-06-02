@@ -14,7 +14,8 @@ module.exports = {
     //出口
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'main.js'
+        filename: 'main.js',
+        publicPath: '/'
     },
     //loader
     module: {
@@ -90,7 +91,8 @@ module.exports = {
     devServer: {
         port: 8080,
         open: true,
-        quiet: true
+        quiet: true,
+        historyApiFallback: true //任意的 404 响应都被替代为 index.html
     },
     //错误出现位置
     devtool: 'cheap-module-eval-source-map',
