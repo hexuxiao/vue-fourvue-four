@@ -1,38 +1,34 @@
 <template>
-  <el-row>
-    <el-button>默认按钮</el-button>
-    <el-button type="primary">主要按钮</el-button>
-    <el-button type="success">成功按钮</el-button>
-    <el-button type="info">信息按钮</el-button>
-    <el-button type="warning">警告按钮</el-button>
-    <el-button type="danger" @click="open">危险按钮</el-button>
-  </el-row>
+  <div>
+    <div class="container">
+      <div class="page-header">
+        <h1>路由组件的练习</h1>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <!-- Nav tabs -->
+        <ul class="nav nav-stacked col-md-6" role="tablist">
+          <li role="presentation" class="active">
+            <!-- <a href="#home" aria-controls="home" role="tab" data-toggle="tab">Home</a> -->
+            <router-link to="/home" aria-controls="home" role="tab" data-toggle="tab">Home</router-link>
+          </li>
+          <li role="presentation">
+            <!-- <a href="#About" aria-controls="About" role="tab" data-toggle="tab">About</a> -->
+            <router-link to="/About" aria-controls="About" role="tab" data-toggle="tab">About</router-link>
+          </li>
+        </ul>
+        <!-- Tab panes -->
+        <div class="tab-content col-md-6">
+          <router-view></router-view>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script type="text/ecmascript-6">
-export default {
-  methods: {
-    open() {
-      this.$confirm("此操作将永久删除该文件, 是否继续?", "提示", {
-        confirmButtonText: "确定",
-        cancelButtonText: "取消",
-        type: "warning"
-      })
-        .then(() => {
-          this.$message({
-            type: "success",
-            message: "删除成功!"
-          });
-        })
-        .catch(() => {
-          this.$message({
-            type: "info",
-            message: "已取消删除"
-          });
-        });
-    }
-  }
-};
+export default {};
 </script>
 
 <style scoped>
